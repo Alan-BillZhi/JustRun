@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	private float jumpForce = 15;
-	private float gravity = 1.5f;
+	private float gravity = 1;
 	private float speed = 0;
 	private float ground = 0;
 
@@ -32,5 +32,9 @@ public class Player : MonoBehaviour {
 			speed = jumpForce;
 			isJumping = true;
 		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		Debug.Log("game over");
 	}
 }
